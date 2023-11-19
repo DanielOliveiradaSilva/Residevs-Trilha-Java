@@ -1,0 +1,299 @@
+
+### PAJ001
+ Atividade Pratica de Java 
+___
+
+*Exercicios:*
+##### 1. O que é uma classe em Java e qual é a diferença entre uma classe e um objeto? Dê 5 exemplos mostrando-os em C++ e em Java.
+<div style="text-align: justify">
+
+*Resosta: Uma classe em Java é um bloco de construção da liguagem de programação. Através dela é possivel modelar uma estrutura representativa de um objeto do mundo real.*
+
+*Em Java, um objeto é uma instância de uma classe, ou seja quando se cria uma classe, está basicamente definindo uma estrutura(corpo) de um objeto desse tipo.* 
+</div>
+
+Aqui estão as definições das classes `Pessoa` , `Animal`, `Carro`, `Bola` e `Livro` em C++ e Java.
+
+### Classe Pessoa
+
+```cpp
+// c++
+class Pessoa {
+    private:
+        double peso;
+        double altura;
+        string idade;
+        
+    //ações(metodo)
+    //gets e sets
+};
+```
+
+```java
+// java
+public class Pessoa{
+    private Double peso;
+    private Double altura;
+    private String idade;
+    //ações(metodo)
+    //gets e sets
+}
+```
+
+### Classe Animal
+```cpp
+//  cpp
+class Animal{
+    private:
+        string raça;
+        string idade;
+        string tamanho;
+    //ações(metodo)
+    //gets e sets
+}
+```
+
+```java
+// java
+public class Animal{
+    private Double peso;
+    private Double altura;
+    private String idade;
+    //ações(metodo)
+    //gets e sets
+}
+```
+### Classe Carro
+
+```cpp
+//  cpp
+class Carro {
+    private:
+        string marca;
+        string modelo;
+        int ano;
+        float preco;
+    
+    //ações(metodo)
+    //gets e sets
+}
+```
+```java
+//  java
+public class Carro {
+    private String marca;
+    private String modelo;
+    private int ano;
+    private float preco;
+    //ações(metodo)
+    //gets e sets
+}
+```
+
+### Classe Bola
+```cpp
+//  cpp
+class Bola {
+    private:
+        string cor;
+        float diametro;
+    //ações(metodo)
+    //gets e sets
+}
+```
+
+```java
+//  java
+public class Bola {
+    private String cor;
+    private float diametro;
+
+    //ações(metodo)
+    //gets e sets
+}
+```
+
+### Classe Livro
+```cpp
+//  cpp
+class Livro {
+    private:
+        string titulo;
+        string autor;
+        int numPaginas;
+    //ações(metodo)
+    //gets e sets
+}
+```
+
+```java
+//  java
+public class Livro {
+    private String titulo;
+    private String autor;
+    private int numPaginas;
+    //ações(metodo)
+    //gets e sets
+}
+```
+##### 2. Como você declara uma variável em Java e quais são os tipos de dados primitivos mais comuns? Faça um paralelo entre isso e a mesma coisa na linguagem C++ 
+
+*Em Java, a declaração funciona da seguinte maneira:*
+
+```java
+   //java
+    //Exemplo:
+    int numero;
+    //tipoDaVariavel nomeDaVariavel;
+
+```
+
+*Os tipos de dados primitivos mais comuns em Java são:*
+
+`int:` Armazena números inteiros.
+`double:` Armazena números de ponto flutuante de dupla precisão.
+`boolean:` Armazena valores lógicos (verdadeiro ou falso).
+`char:` Armazena um único caractere Unicode.
+`byte:` Armazena números inteiros pequenos.
+`short:` Armazena números inteiros curtos.
+`long:` Armazena números inteiros longos.
+`float:` Armazena números de ponto flutuante de precisão simples
+###
+*Em C++, a declaração funciona da seguinte maneira:*
+```cpp
+    //Exemplo
+    char caracter;
+    //tipoDaVariavel nomeDaVariavel;
+
+```
+
+*Os tipos de dados mais comuns em C++ são:*
+
+`int:` Armazena números inteiros.
+`double:` Armazena números de ponto flutuante de dupla precisão.
+`bool:` Armazena valores booleanos (verdadeiro ou falso).
+`char:` Armazena um único caractere ASCII.
+`unsigned int:` Armazena números inteiros positivos.
+`short:` Armazena números inteiros curtos.
+`long:` Armazena números inteiros longos.
+
+<div style="text-align: justify">
+    Tanto em Java quanto em C++, os tipos de dados primitivos fornecem valores básicos para armazenamento de dados.
+</div>
+
+##### 3. Explique o conceito de herança em Java e como você pode criar uma subclasse a partir de uma classe existente. Faça um paralelo com C++, apresentando 5 exemplos.
+
+*Resosta:* Herança em java, é um conceito que se relacionaciona em comparação com parentesco, onde uma classe filho(uma cria)(uma sub classe) herda os caractersiticas geneticas(atributos e metodos) da classe pai(genitor)(super classe).
+####
+Em java para criar uma sub classe(ou a cria de um genitor), pode ser feito da seguinte maneira:
+
+### # Cachorro Herda de Animal
+```java
+//java
+// Classe base (superclasse)
+class Animal {
+    void fazerSom() {
+        System.out.println("O animal faz um som");
+    }
+}
+
+// Subclasse que herda de Animal
+class Cachorro extends Animal {
+    void latir() {
+        System.out.println("O cachorro late");
+    }
+}
+
+```
+```cpp
+// Classe base (superclasse)
+#include <iostream>
+
+// Classe base (superclasse)
+class Animal {
+public:
+    void fazerSom() {
+        cout << "O animal faz um som" << std::endl;
+    }
+};
+
+// Subclasse que herda de Animal
+class Cachorro : public Animal {
+public:
+    void latir() {
+        cout << "O cachorro late" << std::endl;
+    }
+};
+
+
+```
+### # Funcionario Herda de Pessoa
+```java
+//java
+// Classe base (superclasse) Pessoa
+public class Pessoa {
+    private String nome;
+    private int idade;
+
+    public Pessoa(String nome, int idade) {
+        this.nome = nome;
+        this.idade = idade;
+    }
+}
+
+// Classe Funcionario que herda de Pessoa
+public class Funcionario extends Pessoa {
+    private double salario;
+
+    public Funcionario(String nome, int idade, double salario) {
+        super(nome, idade);
+        this.salario = salario;
+    }
+
+}
+
+```
+```cpp
+//cpp
+// Classe base (superclasse) Pessoa
+class Pessoa {
+private:
+    string nome;
+    int idade;
+
+public:
+    Pessoa(string nome, int idade) : nome(nome), idade(idade) {}
+
+};
+
+// Classe Funcionario que herda de Pessoa
+class Funcionario : public Pessoa {
+private:
+    double salario;
+
+public:
+    Funcionario(std::string nome, int idade, double salario) : Pessoa(nome, idade), salario(salario) {}
+
+};
+```
+
+##
+
+##### 4. Quando declaramos uma variável em Java, temos, na verdade, um ponteiro. Em C++ é diferente. Discorra sobre esse aspecto. 
+
+<div style="text-align: justify">
+Em Java, quando declaramos uma variável de um objeto de classe (não primitivos), o que ocorre é que estamos criando uma referência para esse objeto, não um ponteiro direto.
+
+Referência em Java: Em Java, as variáveis de objeto contêm referências a objetos, não os objetos em si. Quando você declara uma variável de um objeto, está criando uma referência para esse objeto. Por exemplo: Pessoa pessoa = new Pessoa();. Aqui, pessoa é uma referência para um objeto Pessoa, não é o próprio objeto.
+
+Alocação de memória: O new em Java aloca memória para o objeto no heap e retorna a referência para esse objeto. A variável pessoa contém essa referência, indicando onde o objeto está localizado na memória.
+
+Diferenças com ponteiros em C++: Embora seja comum comparar referências em Java com ponteiros em C++, existem diferenças significativas. As referências em Java não oferecem aritmética de ponteiros, não permitem manipular diretamente os endereços de memória e não têm os mesmos comportamentos que os ponteiros em C++. Em Java, a manipulação de memória é gerenciada pela JVM (Java Virtual Machine) e não há acesso direto à memória como em C++.
+
+Portanto, em Java, ao declarar uma variável de um objeto, você está criando uma referência para esse objeto, permitindo acesso e manipulação do objeto, mas sem acesso direto à sua localização na memória como seria feito com um ponteiro em C++.
+</div>
+
+##### Calculadora Simples:
+<div style="text-align: justify">
+Crie um programa que funcione como uma calculadora simples. O programa deve pedir ao usuário que insira dois números e depois escolha uma operação (adição, subtração, multiplicação ou divisão). Em seguida, o programa deve calcular o resultado e exibi-lo. 
+</div>
