@@ -187,7 +187,7 @@ public class Livro {
 ####
 Em java para criar uma sub classe(ou a cria de um genitor), pode ser feito da seguinte maneira:
 
-### # Cachorro Herda de Animal
+### # 1. Cachorro Herda de Animal
 ```java
 //java
 // Classe base (superclasse)
@@ -206,8 +206,7 @@ class Cachorro extends Animal {
 
 ```
 ```cpp
-// Classe base (superclasse)
-#include <iostream>
+// C++
 
 // Classe base (superclasse)
 class Animal {
@@ -227,7 +226,7 @@ public:
 
 
 ```
-### # Funcionario Herda de Pessoa
+### # 2. Funcionario Herda de Pessoa
 ```java
 //java
 // Classe base (superclasse) Pessoa
@@ -272,12 +271,258 @@ private:
     double salario;
 
 public:
-    Funcionario(std::string nome, int idade, double salario) : Pessoa(nome, idade), salario(salario) {}
+    Funcionario(string nome, int idade, double salario) : Pessoa(nome, idade), salario(salario) {}
 
 };
 ```
-
+#### # 3. Polpança Herda de ContaBancaria
 ##
+```java
+// Classe base: ContaBancaria
+public class ContaBancaria {
+    protected double saldo;
+
+    public ContaBancaria(double saldoInicial) {
+        this.saldo = saldoInicial;
+    }
+
+    public void depositar(double valor) {
+        saldo += valor;
+        System.out.println("Depósito de " + valor + " realizado. Saldo atual: " + saldo);
+    }
+
+    public void sacar(double valor) {
+        if (valor <= saldo) {
+            saldo -= valor;
+            System.out.println("Saque de " + valor + " realizado. Saldo atual: " + saldo);
+        } else {
+            System.out.println("Saldo insuficiente para saque.");
+        }
+    }
+
+    public double getSaldo() {
+        return saldo;
+    }
+}
+
+// Classe derivada: ContaPoupanca (herda de ContaBancaria)
+public class ContaPoupanca extends ContaBancaria {
+    private double taxaDeJuros;
+
+    public ContaPoupanca(double saldoInicial, double taxaDeJuros) {
+        super(saldoInicial);
+        this.taxaDeJuros = taxaDeJuros;
+    }
+
+    public void calcularJuros(int meses) {
+        double juros = saldo * taxaDeJuros * meses;
+        saldo += juros;
+        System.out.println("Juros de " + juros + " aplicados. Saldo atual: " + saldo);
+    }
+
+    // Aqui, você pode adicionar métodos específicos para ContaPoupanca, se necessário
+}
+
+```
+```cpp
+//C++
+// Classe base: Pessoa
+class Pessoa {
+private:
+    string nome;
+    string sobrenome;
+
+public:
+    Pessoa(string nome, string sobrenome) : nome(nome), sobrenome(sobrenome) {}
+
+    void exibirInformacoes() {
+        cout << "Nome: " << nome << std::endl;
+        cout << "Sobrenome: " << sobrenome << endl;
+    }
+    // Outros métodos e atributos da classe Pessoa, se necessário
+};
+
+// Classe derivada: Cliente (herda de Pessoa)
+class Cliente : public Pessoa {
+private:
+    int codigoCliente;
+    double saldo;
+
+public:
+    Cliente(string nome, string sobrenome, int codigoCliente, double saldo)
+        : Pessoa(nome, sobrenome), codigoCliente(codigoCliente), saldo(saldo) {}
+
+    void exibirDetalhesCliente() {
+        exibirInformacoes(); // Chamando o método da classe base
+        cout << "Código do Cliente: " << codigoCliente << endl;
+        cout << "Saldo: " << saldo << endl;
+    }
+    // Outros métodos e atributos específicos do Cliente
+};
+
+```
+
+### 4. Cliente herda Pessoa
+```java
+    //java
+    // Classe base: Pessoa
+public class Pessoa {
+    private String nome;
+    private String sobrenome;
+
+    public Pessoa(String nome, String sobrenome) {
+        this.nome = nome;
+        this.sobrenome = sobrenome;
+    }
+
+    public void exibirInformacoes() {
+        System.out.println("Nome: " + nome);
+        System.out.println("Sobrenome: " + sobrenome);
+    }
+
+    // Outros métodos e atributos da classe Pessoa, se necessário
+
+}
+
+// Classe derivada: Cliente (herda de Pessoa)
+public class Cliente extends Pessoa {
+    private int codigoCliente;
+    private double saldo;
+
+    public Cliente(String nome, String sobrenome, int codigoCliente, double saldo) {
+        super(nome, sobrenome);
+        this.codigoCliente = codigoCliente;
+        this.saldo = saldo;
+    }
+
+    public void exibirDetalhesCliente() {
+        exibirInformacoes(); // Chamando o método da classe base
+        System.out.println("Código do Cliente: " + codigoCliente);
+        System.out.println("Saldo: " + saldo);
+    }
+
+    // Outros métodos e atributos específicos do Cliente
+}
+```
+
+```cpp
+ //cpp
+// Classe base: Pessoa
+class Pessoa {
+private:
+    string nome;
+    string sobrenome;
+
+public:
+    Pessoa(string nome, string sobrenome) : nome(nome), sobrenome(sobrenome) {}
+
+    void exibirInformacoes() {
+       cout << "Nome: " << nome << endl;
+        cout << "Sobrenome: " << sobrenome << endl;
+    }
+    // Outros métodos e atributos da classe Pessoa, se necessário
+};
+
+// Classe derivada: Cliente (herda de Pessoa)
+class Cliente : public Pessoa {
+private:
+    int codigoCliente;
+    double saldo;
+
+public:
+    Cliente(string nome, string sobrensome, int codigoCliente, double saldo)
+        : Pessoa(nome, sobrenome), codigoCliente(codigoCliente), saldo(saldo) {}
+
+    void exibirDetalhesCliente() {
+        exibirInformacoes(); // Chamando o método da classe base
+        cout << "Código do Cliente: " << codigoCliente << endl;
+        cout << "Saldo: " << saldo <<endl;
+    }
+    // Outros métodos e atributos específicos do Cliente
+};
+
+```
+
+#### 5. Celular Herda de Dispotivo
+```java
+//java
+class Dispositivo {
+    protected String modelo;
+    protected String marca;
+
+    public Dispositivo(String modelo, String marca) {
+        this.modelo = modelo;
+        this.marca = marca;
+    }
+
+    public void ligar() {
+        System.out.println("Ligando o dispositivo " + marca + " " + modelo);
+    }
+
+    public void desligar() {
+        System.out.println("Desligando o dispositivo " + marca + " " + modelo);
+    }
+    // Outros métodos e atributos da classe Dispositivo, se necessário
+}
+
+class Celular extends Dispositivo {
+    private String numeroTelefone;
+
+    public Celular(String modelo, String marca, String numeroTelefone) {
+        super(modelo, marca);
+        this.numeroTelefone = numeroTelefone;
+    }
+
+    public void fazerLigacao(String numero) {
+        System.out.println("Ligando para " + numero + " a partir do celular " + marca + " " + modelo);
+    }
+
+    // Outros métodos e atributos específicos do Celular
+}
+
+
+```
+
+```cpp
+//C++
+#include <iostream>
+#include <string>
+
+// Classe base: Dispositivo
+class Dispositivo {
+protected:
+    string modelo;
+    string marca;
+
+public:
+    Dispositivo(string modelo, string marca) : modelo(modelo), marca(marca) {}
+
+    void ligar() {
+        cout << "Ligando o dispositivo " << marca << " " << modelo << std::endl;
+    }
+
+    void desligar() {
+         cout << "Desligando o dispositivo " << marca << " " << modelo << endl;
+    }
+    // Outros métodos e atributos da classe Dispositivo, se necessário
+};
+
+// Classe derivada: Celular (herda de Dispositivo)
+class Celular : public Dispositivo {
+private:
+    string numeroTelefone;
+
+public:
+    Celular(std::string modelo, std::string marca, std::string numeroTelefone) : Dispositivo(modelo, marca), numeroTelefone(numeroTelefone) {}
+
+    void fazerLigacao(string numero) {
+        cout << "Ligando para " << numero << " a partir do celular " << marca << " " << modelo << endl;
+    }
+
+    // Outros métodos e atributos específicos do Celular
+};
+
+```
 
 ##### 4. Quando declaramos uma variável em Java, temos, na verdade, um ponteiro. Em C++ é diferente. Discorra sobre esse aspecto. 
 
