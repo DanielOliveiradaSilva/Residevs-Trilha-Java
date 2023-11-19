@@ -297,3 +297,12 @@ Portanto, em Java, ao declarar uma variável de um objeto, você está criando u
 <div style="text-align: justify">
 Crie um programa que funcione como uma calculadora simples. O programa deve pedir ao usuário que insira dois números e depois escolha uma operação (adição, subtração, multiplicação ou divisão). Em seguida, o programa deve calcular o resultado e exibi-lo. 
 </div>
+<a href="Calculadora/Calculadora/src/Calculadora.java">Acessar Código</a>
+
+##### Conversor de Temperatura:
+<div style="text-align: justify">
+Conversor de Temperatura:
+Escreva um programa que converta a temperatura de graus Celsius para Fahrenheit ou vice-versa, dependendo da escolha do usuário. O programa deve solicitar ao usuário que insira a temperatura e a unidade de origem (Celsius ou Fahrenheit) e, em seguida, realizar a conversão e exibir o resultado. A fórmula para a conversão de Celsius para Fahrenheit é: F = (C * 9/5) + 32, onde F é a temperatura em Fahrenheit
+e C é a temperatura em Celsius. 
+</div>
+<a href="ConversorDeTemperatura/src/Conversor.java">Acessar Código</a>
