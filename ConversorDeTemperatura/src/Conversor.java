@@ -40,10 +40,10 @@ public class Conversor {
         int op = teclado.nextInt();
         if (op == 1) {
             conversor.converterParaCelsius();
-            System.out.println("Temperatura em Celsius: " + conversor.Celsius);
+            System.out.println("Temperatura em Celsius: " + conversor.Celsius + "°C");
         } else if (op == 2) {
             conversor.converterParaFahrenheit();
-            System.out.println("Temperatura em Fahrenheit: " + conversor.Fahrenheit);
+            System.out.println("Temperatura em Fahrenheit: " + conversor.Fahrenheit + "°F");
         } else {
             System.out.println("Opção inválida!");
         }

@@ -149,7 +149,6 @@ public class Livro {
 ```
 
 *Os tipos de dados primitivos mais comuns em Java são:*
-
 `int:` Armazena números inteiros.
 `double:` Armazena números de ponto flutuante de dupla precisão.
 `boolean:` Armazena valores lógicos (verdadeiro ou falso).
@@ -513,12 +512,15 @@ private:
     string numeroTelefone;
 
 public:
-    Celular(std::string modelo, std::string marca, std::string numeroTelefone) : Dispositivo(modelo, marca), numeroTelefone(numeroTelefone) {}
+    Celular(std
+    ::string modelo, std::string marca, std::string numeroTelefone) : Dispositivo(modelo, marca), numeroTelefone(numeroTelefone) {}
 
     void fazerLigacao(string numero) {
         cout << "Ligando para " << numero << " a partir do celular " << marca << " " << modelo << endl;
-    }
 
+    }
+    
+    
     // Outros métodos e atributos específicos do Celular
 };
 
